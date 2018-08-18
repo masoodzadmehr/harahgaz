@@ -42,6 +42,8 @@ body {
 }
 .sidebar .nav-link:hover{
     background-color: #abdde8;
+    font-weight: bolder;
+
 }
 .sidebar .nav-link .feather {
     margin-left: 4px;
@@ -69,11 +71,11 @@ body {
 .navbar-brand {
     padding-top: .75rem;
     padding-bottom: .75rem;
-    font-family: "IranNastaliq";
-    font-size: 1.1rem;
-    color:#1b1e21 ;
+    font-family: "B Nazanin";
+    font-size: 1.2rem;
     background-color: rgb(255, 255, 0);
     box-shadow: inset 1px 0 0 rgba(0, 0, 0, .25);
+    text-align: center;
 }
 .col-lg-2 .panel{
     margin-right: 25%;
@@ -96,7 +98,6 @@ body {
     border-color: transparent;
     box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
-.
 .panel{
     text-align: center;
     border-style:solid;
