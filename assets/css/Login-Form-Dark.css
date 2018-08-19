@@ -1,19 +1,24 @@
 @font-face {
   font-family: "B Nazanin";
 }
-.login-dark {
-  background-size:cover;
-  position:relative;
-  font-family: "B Nazanin";
-  width:auto;
-  margin:0px;
-  color:rgba(255,255,255,0.2);
-  background: #fafafa url(/assets/img/89204_581.jpg) no-repeat center;
-  max-height:1080px;
-  min-height:720px;
-  height:auto;
-}
+body{
+  background: url("../../assets/img/89204_581.jpg") no-repeat fixed center;
+  background-size: 100% 100%;
+  height: auto;
 
+}
+.login-dark {
+  position:center;
+  font-family: "B Nazanin";
+  width:100%;
+  color:rgba(255,255,255,0.2);
+  height:auto;
+
+}
+.footer-detail{
+  background-color: rgba(0,0,0,0.2);
+  background-blend-mode: darken;
+}
 .login-dark form {
   max-width:320px;
   width:90%;
