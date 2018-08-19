@@ -14,10 +14,6 @@ body {
 /*
  * Sidebar
  */
-.navbar-custom {
-    background-color: black;
-    width: 80%;
-}
 
 /* change the brand and text color */
 .navbar-custom .navbar-brand,
@@ -36,18 +32,6 @@ body {
     color: #ffffff;
 }
 
-/* for dropdown only - change the color of droodown */
-.navbar-custom .dropdown-menu {
-    background-color: #ff5500;
-}
-.navbar-custom .dropdown-item {
-    color: #ffffff;
-}
-.navbar-custom .dropdown-item:hover,
-.navbar-custom .dropdown-item:focus {
-    color: #333333;
-    background-color: rgba(255,255,255,.5);
-}
 .sidebar {
     position: fixed;
     top: 0;
@@ -63,7 +47,7 @@ body {
 
 .sidebar-sticky {
     position: -webkit-sticky;
-    position: sticky;
+    position: center;
     top: 48px; /* Height of navbar */
     height: calc(100vh - 48px);
     padding-top: .5rem;
@@ -75,7 +59,7 @@ body {
     font-family: "B Nazanin";
     font-weight: 500;
     font-size: 15px;
-    color: #333;
+    color: #fff;
 }
 .sidebar .nav-link:hover{
     background-color: #abdde8;
@@ -89,6 +73,7 @@ body {
 }
 .sidebar .nav-link.active {
     border-left: 5px solid yellow;
+    color: #ff0;
 }
 
 .sidebar .nav-link:hover .feather,
@@ -111,6 +96,7 @@ body {
     padding: 2px 8px;
 
 }
+/*
 .navbar-brand {
     padding-top: .75rem;
     padding-bottom: .75rem;
@@ -119,6 +105,7 @@ body {
     background-color: #fefefe;
     box-shadow: inset 1px 0 0 rgba(0, 0, 0, .25);
 }
+*/
 
 
 .navbar .form-control {
