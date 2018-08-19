@@ -2,11 +2,16 @@
   font-family: "B Nazanin";
 }
 .login-dark {
-  height:1000px;
-  background:#475d62 url(../../assets/img/star-sky.jpg);
   background-size:cover;
   position:relative;
   font-family: "B Nazanin";
+  width:auto;
+  margin:0px;
+  color:rgba(255,255,255,0.2);
+  background: #fafafa url(/assets/img/89204_581.jpg) no-repeat center;
+  max-height:1080px;
+  min-height:720px;
+  height:auto;
 }
 
 .login-dark form {
