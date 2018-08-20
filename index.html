@@ -15,23 +15,9 @@
 </head>
 
 <body>
-<!--<nav class="navbar navbar-dark sticky-top bg-secondary flex-md-nowrap p-0">
-    <strong class="navbar-brand col-md-2" style="color: black"> پنل مدیریتی <strong dir="ltr">194194.ir</strong></strong>
-    <ul class="navbar-nav px-2">
-        <li class="nav-item text-nowrap">
-            <a class="nav-link" href="login.html">خروج</a>
-        </li>
-    </ul>
-    <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">نام کاربری</a>
-        </li>
-    </ul>
-</nav>-->
-
 <div class="container-fluid">
     <div class="row" dir="ltr">
-        <div class="col-lg-12  navbar bg-dark">
+        <div class="col-navbar-custom navbar bg-custom-navbar">
             <!--<div class="row">-->
                 <nav class="navbar navbar-expand-md navbar-custom">
                    <img class="navbar-image-brand" src="assets/img/logo194.png">
@@ -45,15 +31,25 @@
                 </nav>
             <!--</div>-->
         </div>
-        <div class="col-md-2  bg-dark   sidebar" dir="rtl">
+        <div class="col-sidebar-custom  bg-custom-sidebar    sidebar" dir="rtl">
+            <div class="row" style="height: 100px">
+                <div class="custom-contact">
+                    <img src="assets/img/icon-professional.png" class="custom-contact-img">
+
+                </div>
+            </div>
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
-                    <li class="nav-item">
+                    <li class="nav-item collapsed" data-toggle="collapse" data-target="#dashboard" >
                         <a class="nav-link" href="#">
                             <span data-feather="home"></span>
-                            داشبورد
+                            داشبورد <i class="fa fa-gift fa-lg"></i>
                         </a>
                     </li>
+                    <ui class="sub-menu collapse" id="dashboard">
+                        <li><a class="nav-link" href="#">داشبورد</a></li>
+
+                    </ui>
                     <li class="nav-item">
                         <a class="nav-link active" href="#">
                             <span data-feather="file"></span>
@@ -66,8 +62,8 @@
                            ارسال تیکت پشتیبانی
                         </a>
                     </li>
-
                 </ul>
+
 
             </div>
         </div>
@@ -88,7 +84,7 @@
 <!-- Icons -->
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
 <script>
-    feather.replace()
+
 </script>
 
 <!-- Graphs -->
