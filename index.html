@@ -12,6 +12,8 @@
 
     <!-- Custom styles for this template -->
     <link href="assets/css/dashboard.rtl.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
 </head>
 
 <body>
@@ -43,19 +45,25 @@
                     <li class="nav-item collapsed" data-toggle="collapse" data-target="#dashboard" >
                         <a class="nav-link" href="#">
                             <span data-feather="home"></span>
-                            داشبورد <i class="fa fa-gift fa-lg"></i>
+                            پنل کاربری
+                            <i class="fa fa-caret-down"></i>
                         </a>
                     </li>
-                    <ui class="sub-menu collapse" id="dashboard">
-                        <li><a class="nav-link" href="#">داشبورد</a></li>
+                    <ui class=" collapse " id="dashboard">
+                        <li><a class="nav-link sub-menu-link active" href="#">پنل کاربری</a></li>
 
                     </ui>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">
-                            <span data-feather="file"></span>
-                            اعلام رقم
+                    <li class="nav-item collapsed" data-toggle="collapse" data-target="#ragham" >
+                        <a class="nav-link" href="#">
+                            <span data-feather="home"></span>
+                            ارسال رقم
+                            <i class="fa fa-caret-down"></i>
                         </a>
                     </li>
+                    <ui class=" collapse " id="ragham">
+                        <li><a class="nav-link sub-menu-link" href="#">ارسال رقم</a></li>
+
+                    </ui>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <span data-feather="users"></span>
@@ -70,6 +78,17 @@
 
 
     </div>
+
+</div>
+<div class="container-fluid">
+<div class="sub-main">
+    <div class="grid">
+        
+    </div>
+
+
+
+</div>
 </div>
 
 
@@ -80,15 +99,23 @@
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 <script src="assets/js/vendor/popper.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- Icons -->
-<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-<script>
-
-</script>
-
+<script src="assets/jqwidgets/jqxgrid.js"></script>
+<script src="assets/jqwidgets/jqxgrid.aggregates.js.js"></script>
+<script src="assets/jqwidgets/jqxgrid.columnsreorder.js"></script>
+<script src="assets/jqwidgets/jqxgrid.columnsresize.js"></script>
+<script src="assets/jqwidgets/jqxgrid.edit.js"></script>
+<script src="assets/jqwidgets/jqxgrid.export.js"></script>
+<script src="assets/jqwidgets/jqxgrid.filter.js"></script>
+<script src="assets/jqwidgets/jqxgrid.grouping.js"></script>
+<script src="assets/jqwidgets/jqxgrid.pager.js"></script>
+<script src="assets/jqwidgets/jqxgrid.storage.js"></script>
+<script type="text/javascript" src="assets/jqwidgets/jqxcore.js"></script>
+<script type="text/javascript" src="assets/jqwidgets/jqxdata.js"></script>
+<script type="text/javascript" src="assets/jqwidgets/jqxbuttons.js"></script>
+<script type="text/javascript" src="assets/jqwidgets/jqxscrollbar.js"></script>
+<script type="text/javascript" src="assets/jqwidgets/jqxlistbox.js"></script>
+<script type="text/javascript" src="assets/jqwidgets/jqxcombobox.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap-datepicker.min.js"></script>
 <!-- Graphs -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-
 </body>
 </html>
