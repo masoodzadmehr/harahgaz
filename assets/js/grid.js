@@ -1,37 +1,32 @@
-$(document).ready(function () {
-        var url = "../datafile.json";
-        // prepare the data
-        var source =
-            {
-                datatype: "json",
-                datafields: [
-                    { name: 'id', type: 'int' },
-                    { name: 'firstname',, type: 'float' },
-                    { name: 'ShipName', map: 'm\\:properties>d\\:ShipName', type: 'string' },
-                    { name: 'ShipAddress', map: 'm\\:properties>d\\:ShipAddress', type: 'string' },
-                    { name: 'ShipCity', map: 'm\\:properties>d\\:ShipCity', type: 'string' },
-                    { name: 'ShipCountry', map: 'm\\:properties>d\\:ShipCountry', type: 'string' }
-                ],
-                root: "entry",
-                record: "content",
-                id: 'm\\:properties>d\\:OrderID',
-                url: url
-            };
-        var dataAdapter = new $.jqx.dataAdapter(source);
-        // create grid.
-        $("#grid").jqxGrid(
-            {
-                width: getWidth('Grid'),
-                height: 450,
-                source: dataAdapter,
-                rtl: true,
-                columns: [
-                    { text: 'Ship Name',  datafield: 'ShipName', width: 250, align: 'right', cellsalign: 'right' },
-                    { text: 'Shipped Date', datafield: 'ShippedDate', width: 100, align: 'right',  cellsalign: 'right', cellsformat: 'yyyy-MM-dd' },
-                    { text: 'Freight', datafield: 'Freight', width: 80, align: 'right',  cellsformat: 'F2', cellsalign: 'right' },
-                    { text: 'Ship Address', datafield: 'ShipAddress', align: 'right',  width: 350, cellsalign: 'right' },
-                    { text: 'Ship City', datafield: 'ShipCity', width: 100, align: 'right',  cellsalign: 'right' },
-                    { text: 'Ship Country', datafield: 'ShipCountry', align: 'right',  cellsalign: 'right' }
-                ]
-            });
+var url = "../datafile.json";
+// prepare the data
+var source =
+    {
+        datatype: "json",
+        datafields: [
+            { name: 'id', type: 'int' },
+            { name: 'first_name', type: 'string' },
+            { name: 'last_name', type: 'string' },
+            { name: 'email', type: 'string' },
+            { name: 'gender',type: 'string' },
+            { name: 'ip_address', type: 'string' }
+        ],
+        url: url
+    };
+var dataAdapter =new $.jqx.dataAdapter(source);
+// create grid.
+$("#grid").jqxGrid(
+    {
+        width: 700,
+        height: 450,
+        source: dataAdapter,
+        rtl: true,
+        columns: [
+            { text: 'ID',  datafield: 'id', width: 250, align: 'right', cellsalign: 'right' },
+            { text: 'FirstName', datafield: 'first_name', width: 100, align: 'right',  cellsalign: 'right', },
+            { text: 'LastName', datafield: 'last_name', width: 80, align: 'right'  , cellsalign: 'right' },
+            { text: 'Email', datafield: 'email', align: 'right',  width: 350, cellsalign: 'right' },
+            { text: 'Gender', datafield: 'gender', width: 100, align: 'right',  cellsalign: 'right' },
+            { text: 'IP_Address', datafield: 'ip_address', align: 'right',  cellsalign: 'right' }
+        ]
     });

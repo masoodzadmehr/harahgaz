@@ -14,6 +14,7 @@
     <link href="assets/css/dashboard.rtl.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
+
 </head>
 
 <body>
@@ -37,6 +38,7 @@
             <div class="row" style="height: 100px">
                 <div class="custom-contact">
                     <img src="assets/img/icon-professional.png" class="custom-contact-img">
+                    <a class="custom-contact-name" style="color: #fff ;width:200px;">نام کاربری</a>
 
                 </div>
             </div>
@@ -82,7 +84,7 @@
 </div>
 <div class="container-fluid">
 <div class="sub-main">
-    <div class="grid">
+    <div id="grid" class="grid">
         
     </div>
 
@@ -95,27 +97,67 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="assets/js/vendor/popper.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/jqwidgets/jqxgrid.js"></script>
-<script src="assets/jqwidgets/jqxgrid.aggregates.js.js"></script>
-<script src="assets/jqwidgets/jqxgrid.columnsreorder.js"></script>
-<script src="assets/jqwidgets/jqxgrid.columnsresize.js"></script>
-<script src="assets/jqwidgets/jqxgrid.edit.js"></script>
-<script src="assets/jqwidgets/jqxgrid.export.js"></script>
-<script src="assets/jqwidgets/jqxgrid.filter.js"></script>
-<script src="assets/jqwidgets/jqxgrid.grouping.js"></script>
-<script src="assets/jqwidgets/jqxgrid.pager.js"></script>
-<script src="assets/jqwidgets/jqxgrid.storage.js"></script>
+<script src="assets/js/jquery-1.11.1.js"></script>
 <script type="text/javascript" src="assets/jqwidgets/jqxcore.js"></script>
 <script type="text/javascript" src="assets/jqwidgets/jqxdata.js"></script>
 <script type="text/javascript" src="assets/jqwidgets/jqxbuttons.js"></script>
 <script type="text/javascript" src="assets/jqwidgets/jqxscrollbar.js"></script>
+<script type="text/javascript" src="assets/jqwidgets/jqxmenu.js"></script>
+<script type="text/javascript" src="assets/jqwidgets/jqxcheckbox.js"></script>
 <script type="text/javascript" src="assets/jqwidgets/jqxlistbox.js"></script>
-<script type="text/javascript" src="assets/jqwidgets/jqxcombobox.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="assets/jqwidgets/jqxdropdownlist.js"></script>
+<script type="text/javascript" src="assets/jqwidgets/jqxgrid.js"></script>
+<script type="text/javascript" src="assets/jqwidgets/jqxgrid.sort.js"></script>
+<script type="text/javascript" src="assets/jqwidgets/jqxgrid.pager.js"></script>
+<script type="text/javascript" src="assets/jqwidgets/jqxgrid.selection.js"></script>
+<script type="text/javascript" src="assets/jqwidgets/jqxgrid.edit.js"></script>
+
+<script src="assets/js/vendor/popper.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script  src="assets/js/bootstrap-datepicker.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // prepare the data
+        var url ="assets/jqxGrid.json" ;
+        var source =
+            {
+
+                datatype: "array",
+                datafields:
+                    [
+                        { name: 'firstname', type: 'string' },
+                        { name: 'lastname', type: 'string' },
+                        { name: 'productname', type: 'string' },
+                        { name: 'available', type: 'bool' },
+                        { name: 'date', type: 'date' },
+                        { name: 'quantity', type: 'number' },
+                        { name: 'price', type: 'number' }
+                    ]
+            };
+        var dataAdapter = new $.jqx.dataAdapter(source);
+        // initialize jqxGrid
+        $("#grid").jqxGrid(
+            {
+                width: 700,
+                height:450,
+                source: dataAdapter,
+                altrows: true,
+                sortable: true,
+                selectionmode: 'multiplecellsextended',
+                columns: [
+                    { text: 'First Name', datafield: 'firstname', width: 130 },
+                    { text: 'Last Name', datafield: 'lastname', width: 130 },
+                    { text: 'Product', datafield: 'productname', width: 200 },
+                    { text: 'Available', datafield: 'available', columntype: 'checkbox', width: 67, cellsalign: 'center', align: 'center' },
+                    { text: 'Ship Date', datafield: 'date', width: 120, align: 'right', cellsalign: 'right', cellsformat: 'd' },
+                    { text: 'Quantity', datafield: 'quantity', width: 70, align: 'right', cellsalign: 'right' },
+                    { text: 'Price', datafield: 'price', cellsalign: 'right', align: 'right', cellsformat: 'c2' }
+                ]
+            });
+    });
+</script>
+
 <!-- Graphs -->
 </body>
 </html>
