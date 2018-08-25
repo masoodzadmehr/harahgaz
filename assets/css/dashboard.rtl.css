@@ -168,7 +168,17 @@ body {
 .sub-menu-link{
     background-color: rgba(52, 58, 64,0.8);
 }
+.taid{
+    margin-right: 50px;
 
+}
+#ersal-ragham{
+    font-family: "B Nazanin";
+   margin-right: 25% ;
+    margin-top: 5%;
+
+
+}
 
 /*
  * Utilities

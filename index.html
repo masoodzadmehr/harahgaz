@@ -14,11 +14,14 @@
     <link href="assets/css/dashboard.rtl.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="assets/jqwidgets/styles/jqx.base.css">
+    <link rel="stylesheet" href="assets/jqwidgets/styles/jqx.bootstrap.css">
+    <link rel="stylesheet" href="assets/css/persian-datepicker.min.css"
 
 </head>
 
 <body>
-<div class="container-fluid">
+<div class="container-fluid" >
     <div class="row" dir="ltr">
         <div class="col-navbar-custom navbar bg-custom-navbar">
             <!--<div class="row">-->
@@ -82,15 +85,26 @@
     </div>
 
 </div>
-<div class="container-fluid">
+<div class="container-fluid" id="fluid-window">
 <div class="sub-main">
-    <div id="grid" class="grid">
-        
-    </div>
+        <form method="post" id="ersal-ragham">
+            <div class="form-group" >
+                <label for="begin-date" style="margin-left: 20px; color: #FFFFFF"> تاریخ شروع:
+            <input type="text" id="begin-date" class="begin-date" style="margin-right: 20px">
+                </label >
+                <label for="end-date" style="color: #FFFFFF">  تاریخ پایان:
+            <input type="text" id="end-date" class="end-date"style="margin-right: 20px">
+                </label>
+            <button type="submit" class="btn-dark taid">تایید</button>
+            </div>
+        </form>
+
+
 
 
 
 </div>
+    <div id="grid" class="grid"></div>
 </div>
 
 
@@ -111,50 +125,22 @@
 <script type="text/javascript" src="assets/jqwidgets/jqxgrid.pager.js"></script>
 <script type="text/javascript" src="assets/jqwidgets/jqxgrid.selection.js"></script>
 <script type="text/javascript" src="assets/jqwidgets/jqxgrid.edit.js"></script>
+<script src="assets/js/persian-date/persian-date.min.js"></script>
+<script src="assets/js/persian-date/persian-datepicker.min.js"></script>
+
 
 <script src="assets/js/vendor/popper.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script  src="assets/js/bootstrap-datepicker.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        // prepare the data
-        var url ="assets/jqxGrid.json" ;
-        var source =
-            {
+<script type="text/javascript" src="assets/js/grid.js">
 
-                datatype: "array",
-                datafields:
-                    [
-                        { name: 'firstname', type: 'string' },
-                        { name: 'lastname', type: 'string' },
-                        { name: 'productname', type: 'string' },
-                        { name: 'available', type: 'bool' },
-                        { name: 'date', type: 'date' },
-                        { name: 'quantity', type: 'number' },
-                        { name: 'price', type: 'number' }
-                    ]
-            };
-        var dataAdapter = new $.jqx.dataAdapter(source);
-        // initialize jqxGrid
-        $("#grid").jqxGrid(
-            {
-                width: 700,
-                height:450,
-                source: dataAdapter,
-                altrows: true,
-                sortable: true,
-                selectionmode: 'multiplecellsextended',
-                columns: [
-                    { text: 'First Name', datafield: 'firstname', width: 130 },
-                    { text: 'Last Name', datafield: 'lastname', width: 130 },
-                    { text: 'Product', datafield: 'productname', width: 200 },
-                    { text: 'Available', datafield: 'available', columntype: 'checkbox', width: 67, cellsalign: 'center', align: 'center' },
-                    { text: 'Ship Date', datafield: 'date', width: 120, align: 'right', cellsalign: 'right', cellsformat: 'd' },
-                    { text: 'Quantity', datafield: 'quantity', width: 70, align: 'right', cellsalign: 'right' },
-                    { text: 'Price', datafield: 'price', cellsalign: 'right', align: 'right', cellsformat: 'c2' }
-                ]
-            });
+</script>
+<script>
+    $(document).ready(function() {
+        initialValue:false;
+        $(".begin-date").pDatepicker();
+        $(".end-date").pDatepicker();
     });
 </script>
 
