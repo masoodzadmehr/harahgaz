@@ -1,19 +1,16 @@
-.sub-main{
-    width: auto;
-    margin-right:10% ;
-   padding-top: 0.5%;
+.sub-main {
+    width: 80%;
+    padding-top: 1%;
+    padding-right: 10%;
 }
-#grid{
-    height: 50%;
-    width: 100%;
-    margin-right:15% ;
-    background-color: rgba(255, 255, 255,0.8);
-}
-#fluid-window{
-    width: 70%;
-    height: 70%;
-    margin-top: 5%;
-    margin-right: 20%;
+.fluid-window{
+    width: 80%;
+    height: 100%;
+    margin-top: 1%;
+    margin-right: 16%;
+    margin-bottom: 50px;
     background-color: rgba(52, 58, 64,0.9);
-    border: 5px solid darkred;
+    border:5px solid darkslategray;
+    border-radius: 30px;
+
 }

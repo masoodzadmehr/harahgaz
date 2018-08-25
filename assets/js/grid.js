@@ -1,5 +1,7 @@
 $(document).ready(function () {
     var url = "assets/products.xml";
+    var width= $("#")
+
     // prepare the data
     var source =
         {
@@ -32,12 +34,14 @@ $(document).ready(function () {
     // initialize jqxGrid
     $("#grid").jqxGrid(
         {
-            width:800,
+            width:'90%',
+            height:441,
             source: dataAdapter,
+            rtl:true,
             pageable: true,
-            autoheight: true,
             sortable: true,
             altrows: true,
+            autoheight:true,
             enabletooltips: true,
             editable: true,
             selectionmode: 'multiplecellsadvanced',

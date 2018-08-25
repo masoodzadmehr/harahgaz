@@ -55,7 +55,7 @@
                         </a>
                     </li>
                     <ui class=" collapse " id="dashboard">
-                        <li><a class="nav-link sub-menu-link active" href="#">پنل کاربری</a></li>
+                        <li><a class="nav-link sub-menu-link active" href="#" id="dashboard-link">پنل کاربری</a></li>
 
                     </ui>
                     <li class="nav-item collapsed" data-toggle="collapse" data-target="#ragham" >
@@ -66,11 +66,11 @@
                         </a>
                     </li>
                     <ui class=" collapse " id="ragham">
-                        <li><a class="nav-link sub-menu-link" href="#">ارسال رقم</a></li>
+                        <li><a class="nav-link sub-menu-link" href="#" id="ersal-ragham-link" >ارسال رقم</a></li>
 
                     </ui>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="#" id="ticket-link">
                             <span data-feather="users"></span>
                            ارسال تیکت پشتیبانی
                         </a>
@@ -85,8 +85,12 @@
     </div>
 
 </div>
-<div class="container-fluid" id="fluid-window">
-<div class="sub-main">
+<div class="fluid-window">
+    <div id="jqxLoader">
+    </div>
+    <input type="button" value="Open Loader" id="openLoader" />
+    <input type="button" value="Close" id="closeLoader" />
+    <div class="sub-main form-group">
         <form method="post" id="ersal-ragham">
             <div class="form-group" >
                 <label for="begin-date" style="margin-left: 20px; color: #FFFFFF"> تاریخ شروع:
@@ -96,16 +100,15 @@
             <input type="text" id="end-date" class="end-date"style="margin-right: 20px">
                 </label>
             <button type="submit" class="btn-dark taid">تایید</button>
+                <input type="button" value="خروجی اکسل" id='excelExport' class="btn-dark taid" style="font-family:'B Nazanin'"/>
             </div>
         </form>
 
-
-
-
+    </div>
+    <div id="grid" class="grid" style='margin-right: 5%'></div>
 
 </div>
-    <div id="grid" class="grid"></div>
-</div>
+
 
 
 <!-- Bootstrap core JavaScript
@@ -137,11 +140,47 @@
 
 </script>
 <script>
-    $(document).ready(function() {
-        initialValue:false;
-        $(".begin-date").pDatepicker();
-        $(".end-date").pDatepicker();
-    });
+        $("#dashboard-link").click(function () {
+            $(".sub-menu-link").removeClass("active");
+            $(".nav-link").removeClass("active");
+            $(this).addClass("active");
+
+        });
+        $("#ersal-ragham-link").click(function () {
+            $(".sub-menu-link").removeClass("active");
+            $(".nav-link").removeClass("active");
+            $(this).addClass("active");
+
+        });
+        $("#ticket-link").click(function () {
+            $(".sub-menu-link").removeClass("active");
+            $(".nav-link").removeClass("active");
+            $(this).addClass("active");
+
+        });
+        $(".begin-date").persianDatepicker({
+            observer:true,
+            format:'YYYY/MM/DD',
+            initialValue:false
+        });
+        $(".end-date").persianDatepicker({
+            observer:true,
+            format:'YYYY/MM/DD',
+            initialValue:false,
+        });
+        $("#openLoader").jqxButton({
+            width: 150
+        });
+        $("#jqxLoader").jqxLoader({ width: 100, height: 60, imagePosition: 'top' });
+        $('#openLoader').on('click', function () {
+            $('#jqxLoader').jqxLoader('open');
+        });
+        $("#closeLoader").jqxButton({
+            width: 100
+        });
+        $('#closeLoader').on('click', function () {
+            $('#jqxLoader').jqxLoader('close');
+        });
 </script>
 
 <!-- Graphs -->
